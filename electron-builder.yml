@@ -1,0 +1,47 @@
+appId: com.superaudio.control
+productName: Super Audio Control
+directories:
+  output: release
+
+files:
+  - dist/**/*
+  - assets/**/*
+  - scripts/coreAudio.ps1
+  - vendor/vb-cable/**
+  - package.json
+
+win:
+  icon: assets/icons/icon.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+  requestedExecutionLevel: asInvoker
+
+# Standard interactive Windows installer. Installs per-user by default; the
+# optional VB-CABLE driver still asks for Windows' own administrator approval.
+nsis:
+  artifactName: SuperAudioControl-Setup-${version}.${ext}
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Super Audio Control
+  runAfterFinish: true
+  deleteAppDataOnUninstall: false
+  uninstallDisplayName: Super Audio Control
+
+# Optional portable build, selected by .\build.ps1 -Portable.
+portable:
+  artifactName: SuperAudioControl.exe
+  unpackDirName: SuperAudioControl
+  requestExecutionLevel: user
+
+compression: maximum
+asar: true
+
+asarUnpack:
+  - dist/audio_bridge.exe
+  - vendor/vb-cable/**

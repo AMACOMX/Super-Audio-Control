@@ -1,0 +1,42 @@
+{
+  "name": "super-audio-control",
+  "version": "1.0.0",
+  "description": "Windows per-application audio controls, microphone mute, device preferences, and global shortcuts.",
+  "author": "Super Audio Control Team",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 3000",
+    "build": "vite build && esbuild src/main/index.ts --bundle --platform=node --external:electron --format=cjs --outfile=dist/main.js && esbuild src/main/preload.ts --bundle --platform=node --external:electron --format=cjs --outfile=dist/preload.js",
+    "preview": "vite preview",
+    "clean": "node scripts/clean.mjs",
+    "lint": "tsc --noEmit",
+    "test": "tsx tests/runAllTests.ts",
+    "package": "electron-builder --win nsis --x64 --config electron-builder.yml"
+  },
+  "allowScripts": {
+    "electron-winstaller@5.4.0": true,
+    "esbuild@0.28.2": true
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "lucide-react": "^0.546.0",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

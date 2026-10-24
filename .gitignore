@@ -1,0 +1,16 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+.tools/
+scripts/bin/
+scripts/obj/
+# Build artifacts and installers
+/release/
+/Portable/
+node_modules/
+.tools/
+dist/

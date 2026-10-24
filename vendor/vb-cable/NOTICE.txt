@@ -1,0 +1,7 @@
+Third-party driver: VB-Audio VB-CABLE
+Official origin: https://vb-audio.com/Cable/
+VB-CABLE is donationware; all contributions are welcome. Licensing details:
+https://vb-audio.com/Services/licensing.htm
+Super Audio Control is not affiliated with VB-Audio. The driver is distributed
+as an optional component; its installer is launched only after the user's explicit
+request and Windows administrator approval.
